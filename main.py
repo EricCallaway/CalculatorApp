@@ -38,6 +38,10 @@ def operation_selection(user_input):
 
     return solution
 
+
+def button_press(num):
+    pass
+
 def main():
 
     root = Tk()
@@ -69,31 +73,31 @@ def main():
 
     myFont = font.Font(size=30)
 
-    equation_label = StringVar()
+    equation_label = StringVar(value="0")
 
-    display = Label(root, textvariable=equation_label, font=('consolas', 20), bg="white", width=24, height=2).grid(row=0, column=0, columnspan=4, sticky='nswe')
+    display = Label(root, textvariable=equation_label, font=myFont, bg="white", width=24, height=2).grid(row=0, column=0, columnspan=4, sticky='nswe')
 
-    zero = Button(root, width=WIDTH*2, text="0", font=myFont).grid(row=6, column=0, columnspan=2, sticky='nswe')
-    one = Button(root, width=WIDTH, text="1", font=myFont).grid(row=5, column=0, sticky='nswe')
-    two = Button(root, width=WIDTH, text="2" , font=myFont).grid(row=5, column=1, sticky='nswe')
-    three = Button(root, width=WIDTH, text="3", font=myFont).grid(row=5, column=2, sticky='nswe')
-    four = Button(root, width=WIDTH,text="4", font=myFont).grid(row=4, column=0, sticky='nswe')
-    five = Button(root, width=WIDTH, text="5", font=myFont).grid(row=4, column=1, sticky='nswe')
-    six = Button(root, width=WIDTH, text="6", font=myFont).grid(row=4, column=2, sticky='nswe')
-    seven = Button(root, width=WIDTH, text="7", font=myFont).grid(row=3, column=0, sticky='nswe')
-    eight = Button(root, width=WIDTH, text="8", font=myFont).grid(row=3, column=1, sticky='nswe')
-    nine = Button(root, width=WIDTH, text="9", font=myFont).grid(row=3, column=2, sticky='nswe')
-    decimal = Button(root, width=WIDTH, text=".", font=myFont).grid(row=6, column=2, sticky='nswe')
+    zero = Button(root, width=WIDTH*2, text="0", font=myFont, command=lambda: button_press(0)).grid(row=6, column=0, columnspan=2, sticky='nswe')
+    one = Button(root, width=WIDTH, text="1", font=myFont, command=lambda: button_press(1)).grid(row=5, column=0, sticky='nswe')
+    two = Button(root, width=WIDTH, text="2" , font=myFont, command=lambda: button_press(2)).grid(row=5, column=1, sticky='nswe')
+    three = Button(root, width=WIDTH, text="3", font=myFont, command=lambda: button_press(3)).grid(row=5, column=2, sticky='nswe')
+    four = Button(root, width=WIDTH,text="4", font=myFont, command=lambda: button_press(4)).grid(row=4, column=0, sticky='nswe')
+    five = Button(root, width=WIDTH, text="5", font=myFont, command=lambda: button_press(5)).grid(row=4, column=1, sticky='nswe')
+    six = Button(root, width=WIDTH, text="6", font=myFont, command=lambda: button_press(6)).grid(row=4, column=2, sticky='nswe')
+    seven = Button(root, width=WIDTH, text="7", font=myFont, command=lambda: button_press(7)).grid(row=3, column=0, sticky='nswe')
+    eight = Button(root, width=WIDTH, text="8", font=myFont, command=lambda: button_press(8)).grid(row=3, column=1, sticky='nswe')
+    nine = Button(root, width=WIDTH, text="9", font=myFont, command=lambda: button_press(9)).grid(row=3, column=2, sticky='nswe')
+    decimal = Button(root, width=WIDTH, text=".", font=myFont, command=lambda: button_press('.')).grid(row=6, column=2, sticky='nswe')
 
-    divide = Button(root, width=WIDTH, text="/", font=myFont).grid(row=2, column=3, sticky='nswe')
-    multiply = Button(root, width=WIDTH, text="X", font=myFont).grid(row=3, column=3, sticky='nswe')
-    subtract = Button(root, width=WIDTH, text="-", font=myFont).grid(row=4, column=3, sticky='nswe')
-    add = Button(root, width=WIDTH, text="+", font=myFont).grid(row=5, column=3, sticky='nswe')
-    equal = Button(root, width=WIDTH, text="=", font=myFont).grid(row=6, column=3, sticky='nswe')
+    divide = Button(root, width=WIDTH, text="/", font=myFont, command=lambda: button_press('/')).grid(row=2, column=3, sticky='nswe')
+    multiply = Button(root, width=WIDTH, text="X", font=myFont, command=lambda: button_press('X')).grid(row=3, column=3, sticky='nswe')
+    subtract = Button(root, width=WIDTH, text="-", font=myFont, command=lambda: button_press('-')).grid(row=4, column=3, sticky='nswe')
+    add = Button(root, width=WIDTH, text="+", font=myFont, command=lambda: button_press('+')).grid(row=5, column=3, sticky='nswe')
+    equal = Button(root, width=WIDTH, text="=", font=myFont, command=lambda: button_press('=')).grid(row=6, column=3, sticky='nswe')
 
-    clear = Button(root, width=WIDTH, text="C" , font=myFont).grid(row=2, column=0, sticky='nswe')
-    pos_neg = Button(root, width=WIDTH, text="+/-", font=myFont).grid(row=2, column=1, sticky='nswe')
-    percentage = Button(root, width=WIDTH, text="%", font=myFont).grid(row=2, column=2, sticky='nswe')
+    clear = Button(root, width=WIDTH, text="C" , font=myFont, command=lambda: button_press('C')).grid(row=2, column=0, sticky='nswe')
+    pos_neg = Button(root, width=WIDTH, text="+/-", font=myFont, command=lambda: button_press('+/-')).grid(row=2, column=1, sticky='nswe')
+    percentage = Button(root, width=WIDTH, text="%", font=myFont, command=lambda: button_press('%')).grid(row=2, column=2, sticky='nswe')
 
   
     
